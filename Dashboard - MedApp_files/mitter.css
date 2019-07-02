@@ -1,0 +1,88 @@
+#thermometer .goal {
+    position: absolute;
+    left: 49px;
+    top: 0;
+
+}
+/*#thermometer .amount {
+    border-top: 1px solid #000;
+    color: black;
+    display: inline-block;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    padding: 0 75px 0 0;
+    width: 50%;
+}*/
+#thermometer .progress .amount {
+    border-top: 1px solid #006600;
+    color: #fff;
+    left: 0;
+    padding: 0 0 0 75px;
+    position: absolute;
+}
+#thermometer {
+    border-radius: 12px;
+    height: 392px;
+    padding: 50px 0;
+    position: relative;;
+}
+#thermometer .track {
+    background: #363636 none repeat scroll 0 0;
+    border: 5px ridge #c5c5c5;
+    border-radius: 17px;
+    height: 280px;
+    left: 0px;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    width: 42px;
+}
+#thermometer .progress {
+    background-color: green; /* For browsers that do not support gradients */
+    background-image: linear-gradient( green, yellow, red);
+    border-radius: 23px;
+    bottom: 6px;
+    height: 0;
+    left: 5px;
+    margin-bottom: 0 !important;
+    position: absolute;
+    width: 69%;
+    z-index: 100;
+}
+#thermometer .amount {
+    color: #fff;
+    display: inline-block;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    padding: 0 75px 0 0;
+    width: 50%;
+}
+#thermometer .progress .amount {
+    border-top: 1px solid #006600;
+    color: #fff;
+    left: 0;
+    padding: 0 0 0 75px;
+    position: absolute;
+}
+.bulb {
+    background: #e5e5e5 none repeat scroll 0 0;
+    border-radius: 50%;
+    bottom: -39px;
+    display: block;
+    height: 60px;
+    left: -15px;
+    padding: 10px;
+    position: absolute;
+    width: 60px;
+}
+.inner-bulb {
+    background-color: #b6113f;
+    border-radius: 50%;
+    height: 40px;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 40px;
+}
+num {display: none;}
+Collapse

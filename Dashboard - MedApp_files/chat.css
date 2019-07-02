@@ -1,0 +1,254 @@
+
+.massage-head {
+    background: #9fd86b none repeat scroll 0 0;
+}
+.massage {
+    width: 40%;
+    float: left;
+}
+
+.chat-box {
+    float: left;
+    width: 60%;
+}
+.chat-left {
+    overflow: hidden;
+}
+
+.modal-content .chat-box {
+    float: none;
+    width: 100%;
+}
+
+.modal-content button span {
+    top: 12px;
+}
+.massage-head {
+  height: 40px;
+  padding: 3px 0;
+  position: relative;
+  text-align: center;
+}
+.massage-head h2 {
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+}
+.sating-ico {
+    left: 10px;
+    position: absolute;
+    top: 5px;
+    cursor: pointer;
+}
+
+.edit-ico {
+    background: #095169 none repeat scroll 0 0;
+    border-radius: 50px;
+    color: #fff;
+    height: 30px;
+    position: absolute;
+    right: 11px;
+    top: 5px;
+    width: 30px;
+    cursor: pointer;
+}
+.massage-iteme {
+  background: #5ebebe none repeat scroll 0 0;
+}
+
+.mass-single-itme {
+    display: grid;
+    grid-template-columns: 55px 1fr 15px;
+    grid-template-rows: 53px;
+    margin-bottom: 10px;
+}
+.mass-im img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.mass-im {
+    padding-left: 10px;
+    margin-right: 10px;
+}
+.mass-cont h5 {
+    color: #0d3182;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0;
+}
+.mass-cont p {
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 205px;
+}
+
+.massage-iteme {
+  height: 265px;
+  overflow-y: scroll;
+}
+.actt{background: #61b5c4}
+.chat-left {
+    overflow: hidden;
+}
+.chat-head {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+}
+
+.chat-online > h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px 0 0;
+}
+.chat-status-online > p {
+    color: #9fd86b;
+}
+
+.chat-status-offline > p {
+    color: #87929b;
+}
+
+.serch-itme {
+    position: relative;
+    background: #5ebebe none repeat scroll 0 0;
+    padding: 10px;
+}
+.serch-itme input {
+    border-radius: 25px;
+    height: 28px;
+}
+
+.search-item-button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0);
+    border: none;
+    cursor: pointer;
+    opacity: .6;
+    color: inherit;
+}
+
+.sender-img img,.won-img img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+.sender-name {
+    font-weight: 600;
+    margin-right: 13px;
+}
+.sender-img {
+    text-align: right;
+}
+.sender-massage {
+    text-align: right;
+}
+.sender-massage h4 {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 41px 0 83px 36px;
+    box-shadow: 0 0 18px #eee;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 45px 10px 0;
+}
+.won-massage h4 {
+    background: #9ad6d6 none repeat scroll 0 0;
+    border-radius: 0 41px 36px 83px;
+    box-shadow: 0 0 18px #eee;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0 10px 45px;
+}
+.time-date {
+    color: #87929b;
+    margin-right: 20px;
+    font-size: 10px;
+}
+.chaat-mass-area {
+    height: 253px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+.send-massage {
+  background: #cceaea none repeat scroll 0 0;
+  padding: 6px;
+}
+.online{position: relative}
+.online::after {
+  background: #9fd86b none repeat scroll 0 0;
+  content: "";
+  height: 5px;
+  left: 12px;
+  position: absolute;
+  top: 7px;
+  width: 5px;
+  border-radius: 50%;
+}
+.offline{position: relative}
+.offline::after {
+  background: gray;
+  content: "";
+  height: 5px;
+  left: 12px;
+  position: absolute;
+  top: 7px;
+  width: 5px;
+  border-radius: 50%;
+}
+
+.csv-but-pop {
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    border: medium none;
+    border-radius: 11px;
+    float: right;
+    font-size: 10px;
+    margin-right: 36px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .sender-massage h4 {
+      font-size: 11px;
+    }
+        .time-date {
+      font-size: 10px;
+    }
+        .won-massage h4 {
+      font-size: 11px;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width:767px) {
+      .sender-massage h4 {
+      font-size: 11px;
+    }
+        .time-date {
+      font-size: 10px;
+    }
+        .won-massage h4 {
+      font-size: 11px;
+    }
+
+}
+
+
+
+
+
+
+
+

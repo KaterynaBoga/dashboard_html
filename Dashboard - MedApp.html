@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://localhost/doctor/ -->
+<html class="js sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers" lang=""><!-- BEGIN HEAD --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Dashboard - MedApp</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+
+    <link rel="manifest" href="http://localhost/doctor/site.webmanifest">
+    <link rel="apple-touch-icon" href="http://localhost/assets/img/icon.png">
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/png" href="http://localhost/assets/img/icon.png">
+
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="./Dashboard - MedApp_files/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/normalize.css">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/app.e5788ce1.css">
+
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/material-charts.css">
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/chat.css">
+    <link rel="stylesheet" type="text/css" href="./Dashboard - MedApp_files/toastr.min.css">
+
+    <!--Main css============================================-->
+
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/mitter.css">
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/datepicker.min.css">
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/select2.min.css">
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/dropzone.css">
+    <link rel="stylesheet" href="./Dashboard - MedApp_files/doctor.css">
+        </head>
+<!-- END HEAD -->
+<body>
+        <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+            href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+        <nav class="uk-navbar-container uk-margin uk-navbar" uk-navbar="">
+            <div class="uk-navbar-left">
+                <a class="uk-navbar-item uk-logo" href="http://localhost/doctor/">
+                    <img src="./Dashboard - MedApp_files/main-logo.png" alt="MedApp">
+                </a>
+            </div>
+            <div class="uk-navbar-right">
+                                <ul class="uk-navbar-nav">
+                    <li><a class="act" href="http://localhost/doctor/">Dashboard</a></li>
+                    <li><a href="http://localhost/patients">Patient</a></li>
+                    <li>
+                        <a href="http://localhost/supplement/" aria-expanded="false">Supplements</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active"><a href="http://localhost/supplement/company/">Supplement company</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="http://localhost/doctor/staff/">Staff</a></li>
+                    <li><a href="http://localhost/doctor/inventory/">Inventory <span class="top-sp">2</span></a></li>
+                    <li>
+                        <a href="http://localhost/doctor/#" aria-expanded="false" class="">
+                            <img src="./Dashboard - MedApp_files/avatar.jpeg" alt="Concierge Service" style="max-width: 20%; max-height: 20%;">
+                            Concierge Service
+                        </a>
+                        <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" style="left: 1259.22px; top: 80px;">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="http://localhost/doctor/business/show">Business Info</a></li>
+                                <li><a href="http://localhost/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <div class="uk-container">
+        
+            <section class="main-content-area">
+            <div uk-grid="" class="uk-grid">
+        <div class="uk-width-1-4@m uk-first-column">
+            <div class="uk-card uk-card-default zoom-dashboard">
+                <div class="left-side-ber">
+    <div class="side-head">
+        <h4>COMPLIANCE AREA</h4>
+    </div>
+    <div class="side-body uk-padding-small">
+        <div class="overall-content">
+            <p class="side-body-text">OVERALL OFFICE PATIENT SUPPLEMENT ADHERENCE</p>
+        </div>
+        <form name="compliance_filter" method="post">
+        
+        <div class="weekly-select-item">
+            <div class="uk-form-controls">
+                <select id="compliance_filter_timePeriod" name="compliance_filter[timePeriod]" class="uk-select"><option value="1">Weekly</option><option value="2">Month</option><option value="3">Year</option><option value="4">Total</option></select>
+            </div>
+        </div>
+        <div class="uk-grid uk-margin-small" uk-grid="">
+            <div class="date-pik uk-width-1-2@m uk-first-column">
+                <input type="text" id="compliance_filter_dateRangeFrom" name="compliance_filter[dateRangeFrom]" placeholder="From" data-toggle="datepicker" class="uk-input">
+            </div>
+            <div class="date-pik uk-width-1-2@m">
+                <input type="text" id="compliance_filter_dateRangeTo" name="compliance_filter[dateRangeTo]" placeholder="To" data-toggle="datepicker" class="uk-input">
+            </div>
+        </div>
+        <input type="hidden" id="compliance_filter__token" name="compliance_filter[_token]" value="M2ANj7BnBXdVkWBgdy7z9hp_A7njNv8EZSpa6h_SeZs"></form>
+
+        <div class="side-progrees-ber">
+        <div id="thermometer">
+            <div class="track">
+                <div class="progress" style="height: 80%;">
+                    <div style="display: block; width: 150px;" class="amount" id="progessAmount">400 </div>
+                </div>
+
+                <div class="goal" style="height: 100%;width: 57px;">
+                    <div class="amount" id="goalAmount" style="height: 10%;"><num>500</num> <span>100%</span></div>
+                    <div class="amount" style="height: 10%;"><num>400</num> <span>90%</span></div>
+                    <div class="amount" style="height: 10%;"><num>300</num> <span>80%</span></div>
+                    <div class="amount" style="height: 10%;"><num>200</num> <span>70%</span></div>
+                    <div class="amount" style="height: 10%;"><num>100</num> <span>60%</span></div>
+                    <div class="amount" style="height: 10%;"><num>100</num> <span>50%</span></div>
+                    <div class="amount" style="height: 10%;"><num>100</num> <span>40%</span></div>
+                    <div class="amount" style="height: 10%;"><num>100</num> <span>30%</span></div>
+                    <div class="amount" style="height: 10%;"><num>100</num> <span>20%</span></div>
+                    <div class="amount" style="height: 10%;"><num>100</num> <span>10%</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="uk-width-3-4@m">
+            <div uk-grid="" class="uk-grid">
+                <div class="uk-width-1-3@m uk-first-column">
+                    <div class="uk-card uk-card-default uk-padding-small zoom-dashboard">
+                        <div class="total-sell">
+                            <p>TOTAL SALES</p>
+                            <p class="total-sales-price">$ 111000</p>
+                        </div>
+                        <div class="annual-sell">
+                            <p>ANNUAL SALES</p>
+                            <p class="total-sales-price">$ 24000</p>
+                        </div>
+                        <div class="month-sell">
+                            <p>MONTHLY SALES </p>
+                            <p class="total-sales-price">$ 2000</p>
+                        </div>
+                        <div class="example-chart">
+                            <div id="bar-chart-example" class="material-charts-chart-area material-charts-bar material-charts-shadow-1" style="height: 150px; width: 240px; background-color: rgb(255, 255, 255);"><div class="material-charts-hover"><div class="material-charts-hover-text"></div></div><div class="material-charts-chart-title">Bar Chart</div><div class="material-charts-box-chart-x-axis"></div><div class="material-charts-box-chart-y-axis"></div><div class="material-charts-box-chart-vertical-tick" style="bottom: 43px;"></div><div class="material-charts-box-chart-vertical-tick-label" style="bottom: 39px;">10</div><div class="material-charts-box-chart-vertical-tick" style="bottom: 61px;"></div><div class="material-charts-box-chart-vertical-tick-label" style="bottom: 57px;">20</div><div class="material-charts-box-chart-vertical-tick" style="bottom: 79px;"></div><div class="material-charts-box-chart-vertical-tick-label" style="bottom: 75px;">30</div><div class="material-charts-box-chart-horizontal-label" style="left: 43px;">2000</div><div data-hover="5" class="material-charts-box-chart-vertical-bar material-charts-blue" style="left: 48.75px; width: 15.8333px; height: 9px; display: block;"></div><div class="material-charts-box-chart-horizontal-label" style="left: 74.5px;">1000</div><div data-hover="10" class="material-charts-box-chart-vertical-bar material-charts-blue" style="left: 80.4167px; width: 15.8333px; height: 18px; display: block;"></div><div class="material-charts-box-chart-horizontal-label" style="left: 106.5px;">1000</div><div data-hover="30" class="material-charts-box-chart-vertical-bar material-charts-blue" style="left: 112.083px; width: 15.8333px; height: 54px; display: block;"></div><div class="material-charts-box-chart-horizontal-label" style="left: 138px;">5000</div><div data-hover="50" class="material-charts-box-chart-vertical-bar material-charts-blue" style="left: 143.75px; width: 15.8333px; height: 90px; display: block;"></div><div class="material-charts-box-chart-horizontal-label" style="left: 169.5px;">3000</div><div data-hover="20" class="material-charts-box-chart-vertical-bar material-charts-blue" style="left: 175.417px; width: 15.8333px; height: 36px; display: block;"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-2-3@m">
+                    <div class="js-messenger uk-card uk-card-default uk-padding-small zoom-dashboard">
+                        <div class="chat-left">
+                            <div class="massage">
+    <div class="massage-head">
+        <h5>Messenger</h5>
+    </div>
+
+    <div class="serch-itme">
+        <!-- Search form -->
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip search-item-button uk-icon" uk-icon="icon: search"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="search"><circle fill="none" stroke="#000" stroke-width="1.1" cx="9" cy="9" r="7"></circle><path fill="none" stroke="#000" stroke-width="1.1" d="M14,14 L18,18 L14,14 Z"></path></svg></span>
+                <input type="text" class="uk-input js-messenger-search-contacts" placeholder="Search" data-url="/message/search-contacts">
+            </div>
+        </div>
+    </div>
+    <div class="massage-iteme js-messenger-contacts" data-url="/message/contacts">
+            <div class="mass-single-itme js-messenger-thread" data-id="48" data-url="/message/messages/48">
+                <span class="mass-im offline">
+            <img src="./Dashboard - MedApp_files/demo.jpg" data-toggle="modal" data-target="#modal-sections" uk-toggle="" alt="users//demo.jpg">
+        </span>
+                <div class="mass-cont" data-target="#modal-sections" uk-toggle="">
+            <h5>
+                test med
+            </h5>
+            <p>
+                                    777
+                            </p>
+        </div>
+                    <a href="http://localhost/doctor/#" uk-icon="icon: more-vertical" class="uk-icon" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="more-vertical"><circle cx="10" cy="3" r="2"></circle><circle cx="10" cy="10" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg></a>
+            <div uk-dropdown="" class="uk-dropdown">
+                <ul class="uk-nav uk-dropdown-nav">
+                    <li class="uk-active">
+                        <a class="dropdown-item js-clear-chat" href="http://localhost/message/clear-thread/48">Clear chat</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+
+    </div>
+
+</div>
+<div class="content js-messenger-chat"></div>
+
+<div id="modal-sections" uk-modal="" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+        <div class="uk-modal-body">
+            <div class="content js-messenger-chat"></div>
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div uk-grid="" class="uk-grid uk-grid-stack">
+                <div class="uk-width-expand@m uk-first-column">
+                    <div class="uk-card uk-card-default uk-padding-small zoom-dashboard">
+                        
+
+<form action="http://localhost/notification/clear-all" method="post">
+    <div class="noti-top-aeea uk-margin-bottom">
+        <div class="left-notifi">
+            <p>NOTIFICATIONS</p>
+        </div>
+        <button type="submit" class="clear-all uk-button uk-button-default">Clear all</button>
+    </div>
+    <div class="uk-child-width-1-6@m uk-grid-small uk-grid-match uk-grid" uk-grid="">
+        <div class="uk-first-column">
+            <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
+                <div class="noti-but">I Forgot</div>
+                <div class="check-item">
+                                            <div class="uk-text-center">
+                <div class="uk-inline-clip uk-transition-toggle uk-padding-small" tabindex="0">
+                    <input class="uk-checkbox" type="checkbox" name="recipient[]" value="2">
+                    <span class="athor">Concierge
+                        Service</span>
+                    <time>12/06/2019 00:00AM</time>
+                    <p>+12023492920</p>
+                    <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                        <p class="uk-h4 uk-margin-remove">
+                            <a href="http://localhost/notification/clear/2" class="uk-button uk-button-text">Clear</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+                                    
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
+                <div class="noti-but">OOS - No Re-order</div>
+                <div class="check-item">
+                                                            
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
+                <div class="noti-but">Out Travelling</div>
+                <div class="check-item">
+                                                            
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
+                <div class="noti-but">HCP Discontinued</div>
+                <div class="check-item">
+                                                            
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
+                <div class="noti-but">Don't Like it</div>
+                <div class="check-item">
+                                                        <div class="uk-text-center">
+                <div class="uk-inline-clip uk-transition-toggle uk-padding-small" tabindex="0">
+                    <input class="uk-checkbox" type="checkbox" name="recipient[]" value="5">
+                    <span class="athor">Concierge
+                        Service</span>
+                    <time>12/06/2019 00:00AM</time>
+                    <p>+12023492920</p>
+                    <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                        <p class="uk-h4 uk-margin-remove">
+                            <a href="http://localhost/notification/clear/5" class="uk-button uk-button-text">Clear</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+                        
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
+                <div class="noti-but">Now Swipe For 5 Days</div>
+                <div class="check-item">
+                                                                    <div class="uk-text-center">
+                <div class="uk-inline-clip uk-transition-toggle uk-padding-small" tabindex="0">
+                    <input class="uk-checkbox" type="checkbox" name="recipient[]" value="6">
+                    <span class="athor">Concierge
+                        Service</span>
+                    <time>12/06/2019 00:00AM</time>
+                    <p>+12023492920</p>
+                    <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                        <p class="uk-h4 uk-margin-remove">
+                            <a href="http://localhost/notification/clear/6" class="uk-button uk-button-text">Clear</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    </div>
+    <!--modernizr.js========================================-->
+    <script src="./Dashboard - MedApp_files/modernizr-3.6.0.min.js"></script>
+    <script src="./Dashboard - MedApp_files/toastr.min.js"></script>
+
+    <script src="./Dashboard - MedApp_files/jquery.min.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+
+    <!-- UIkit JS -->
+    <script src="./Dashboard - MedApp_files/runtime.26bd8744.js"></script><script src="./Dashboard - MedApp_files/app.d6a9b1ce.js"></script>
+
+    <script src="./Dashboard - MedApp_files/material-charts.js"></script>
+    <script src="./Dashboard - MedApp_files/datepicker.min.js"></script>
+    <script src="./Dashboard - MedApp_files/select2.full.min.js"></script>
+    <script src="./Dashboard - MedApp_files/dropzone.js"></script>
+    <script src="./Dashboard - MedApp_files/main.js"></script>
+
+    <script src="./Dashboard - MedApp_files/plugins.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // JavaScript Document
+            function thermometer(goalAmount, progressAmount, animate) {
+                "use strict";
+                var $thermo = $("#thermometer"),
+                    $progress = $(".progress", $thermo),
+                    $goal = $(".goal", $thermo),
+                    percentageAmount;
+
+                goalAmount = goalAmount || parseFloat($goal.text()),
+                    progressAmount = progressAmount || parseFloat($progress.text()),
+                    percentageAmount = Math.min(Math.round(progressAmount / goalAmount * 1000) / 10, 100); //make sure we have 1 decimal point
+
+                $goal.find(".amount").text();
+                $progress.find(".amount").text();
+
+                $progress.find(".amount").hide();
+                if (animate !== false) {
+                    $progress.animate({
+                        "height": percentageAmount + "%"
+                    }, 1200, function () {
+                        $(this).find(".amount").fadeIn(200);
+                    });
+                } else {
+                    $progress.css({
+                        "height": percentageAmount + "%"
+                    });
+                    $progress.find(".amount").fadeIn(200);
+                }
+            }
+
+            $(document).ready(function () {
+
+                thermometer();
+
+            });
+
+
+        });
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function () {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('send', 'pageview')
+    </script>
+    <script src="./Dashboard - MedApp_files/analytics.js" async="" defer=""></script>
+        <script src="./Dashboard - MedApp_files/messenger.js"></script>
+    <script>
+        var exampleBarChartData = {
+            "datasets": {
+                "values": [5, 10, 30, 50, 20],
+                "labels": [
+                    "2000",
+                    "1000",
+                    "1000",
+                    "5000",
+                    "3000"
+                ],
+                "color": "blue"
+            },
+            "title": "Bar Chart",
+            "height": "150px",
+            "width": $('#bar-chart-example').width() + "px",
+            "background": "#FFFFFF",
+            "shadowDepth": "1"
+        };
+
+        MaterialCharts.bar("#bar-chart-example", exampleBarChartData)
+    </script>
+
+
+</body></html>
